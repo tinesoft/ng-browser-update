@@ -1,0 +1,36 @@
+{
+  "name": "ng-browser-update",
+  "version": "0.1.0",
+  "main": [
+    "dist/ng-browser-update.js",
+    "dist/ng-browser-update.min.js",
+    "dist/ng-browser-update.min.js.map"
+  ],
+  "ignore": [
+
+      "src",
+      "demo",
+      ".bowerrc",
+      ".gitignore",
+      ".travis.yml",
+      "bower.json",
+      "gruntfile.js",
+      "build.config.js",
+      "karma-unit.tpl.js",
+      "changelog.tpl",
+      "package.json",
+      "module.prefix",
+      "module.suffix",
+      "LICENSE",
+      "README.md"
+  ],
+  "dependencies": {
+    "angular": ">= 1.0.7"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3",
+    "angular-mocks": ">= 1.0.7",
+    "angular-bootstrap": "~0.12.0",
+    "google-code-prettify": "~1.0.3"
+  }
+}

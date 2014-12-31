@@ -1,0 +1,7 @@
+*.sw*
+*~
+grunt-watch.bat
+install.bat
+build/
+node_modules/
+bower_components/

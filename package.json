@@ -1,0 +1,51 @@
+{
+  "name": "ng-browser-update",
+  "description": "AngularJS directive for Browser-Update.org (http://browser-update.org): out-dated browsers notifier",
+  "version": "0.1.0",
+  "filename": "./src/ng-browser-update.js",
+  "homepage": "http://github.com/tinesoft/ng-browser-update",
+  "author": {
+    "name": "Tine Kondo",
+    "url": "http://github.com/tinesoft"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tinesoft/ng-browser-update.git"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "https://raw.github.com/tinesoft/ng-browser-update/master/LICENSE"
+  },
+  "keywords": [
+    "angular",
+    "browser update",
+    "browser-update",
+    "browser-update.org",
+    "browser",
+    "browser version",
+    "out of date",
+    "out-of-date",
+    "notifier"
+  ],
+  "bugs": {
+    "url": "http://github.com/tinesoft/ng-browser-update/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-conventional-changelog": "latest",
+    "grunt-karma": "latest",
+    "grunt-ng-annotate": "latest",
+    "grunt-bump": "latest",
+    "karma": "latest",
+    "karma-jasmine": "latest",
+    "karma-phantomjs-launcher": "latest"
+  }
+}
