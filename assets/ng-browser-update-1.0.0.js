@@ -1,5 +1,5 @@
 /**
- * ng-browser-update - v0.1.0 - 2015-01-01
+ * ng-browser-update - v1.0.0 - 2015-01-01
  * http://github.com/tinesoft/ng-browser-update
  *
  * Copyright (c) 2015 Tine Kondo
