@@ -6,14 +6,14 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@tinesoft">
         <meta name="twitter:title" content="ngBrowserUpdate">
-        <meta name="twitter:description" content="AngularJS directive for Browser-Update.org (http://browser-update.org): out-dated browsers notifier">
+        <meta name="twitter:description" content="<%= description %>">
         <meta name="twitter:creator" content="@tinesoft">
         <!--<meta name="twitter:image:src" content="">-->
         <meta property="og:title" content="ngBrowserUpdate" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://ngBrowserUpdate.appspot.com" />
+        <meta property="og:url" content="http://tinesoft.github.io/ng-borwser-update" />
         <!--<meta property="og:image" content="" />-->
-        <meta property="og:description" content="AngularJS directive for Browser-Update.org (http://browser-update.org): out-dated browsers notifier">
+        <meta property="og:description" content="<%= description %>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>ngBrowserUpdate Directive Demo</title>
 
@@ -28,10 +28,6 @@
         <% lr.forEach( function ( file ) { %>
         <!-- liveReload -->
         <script type="text/javascript" src="<%= file %>"></script><% }); %>
-
-        <!-- Show Boostrap grid-->
-        <!--<script type="text/javascript" src="http://alefeuvre.github.com/foundation-grid-displayer/gd-bookmarklet.min.js?bmletFramework=b"></script>-->
-
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -98,7 +94,8 @@
 		             
 		              <div class="pull-right">
 		                <button class="btn btn-info" ng-click="edit('1.0.7', 'ngBrowserUpdate', 'ng-browser-update')">
-		                <i class="fa fa-edit"></i> Edit in plunker
+						  	<i class="fa fa-eye"></i> See / 
+		                	<i class="fa fa-edit"></i> Edit in plunker
 		                </button>
 		              </div>
 		              <tabset>
@@ -111,6 +108,14 @@
 		                </tab>
 		              </tabset>
 		            </div>
+		            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		            	<p>This displays a notification bar that looks like this:</p>
+		            	<img src="assets/notif-sample.png" class="img-responsive" alt="Sample of the Notification Bar">
+		            </div>
+		            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 callout callout-warning">
+		            	<p><strong>Note:</strong> With the minimal code, you will only see the notification bar if you are actually browsing with an outdated browser.</p>
+		            </div>
+
 				</div>
 			</div>
 		</section>
@@ -121,7 +126,32 @@
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 page-header">
 		                <h1>With Options</h1>        
 		            </div>
-		            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+						<p>A little more complete usage, with some options given via <b>hardcoded values</b>.</p>						
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+		             
+		              <div class="pull-right">
+		                <button class="btn btn-info" ng-click="edit('1.0.7', 'ngBrowserUpdate', 'ng-browser-update')">
+						  	<i class="fa fa-eye"></i> See / 
+		                	<i class="fa fa-edit"></i> Edit in plunker
+		                </button>
+		              </div>
+		              <tabset>
+		                <tab heading="Markup">
+		                  <div plunker-content="markup">
+		                      <pre class="prettyprint">
+&lt;browser-update  
+   versions="{i:8,f:8,o:9.63,s:2,c:8}" reminder="1"
+   always-show-bar="true" new-window="false" 
+   notification-text="'This is my custom message'"&gt;
+&lt;/browser-update&gt;
+		                      </pre>
+		                  </div>
+		                </tab>
+		              </tabset>
+		            </div>
+		            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 callout callout-info">
 		                <p>The following options are available:</p>
 		                <ul>
 							<li><b>versions</b> : browser versions to notify</li>
@@ -134,74 +164,51 @@
 							<li><b>on-notificationBar-clicked</b>: callback function if bar was clicked</li>
 		                </ul>    
 		            </div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
-						<p>A little more complete usage, with some options given via <b>hardcoded attributes values</b>.</p>						
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
-		             
-		              <div class="pull-right">
-		                <button class="btn btn-info" ng-click="edit('1.0.7', 'ngBrowserUpdate', 'ng-browser-update')">
-		                <i class="fa fa-edit"></i> Edit in plunker
-		                </button>
-		              </div>
-		              <tabset>
-		                <tab heading="Markup">
-		                  <div plunker-content="markup">
-		                      <pre class="prettyprint">
-&lt;browser-update  
- versions="{i:8,f:8,o:9.63,s:2,c:8}" reminder="1"
- always-show-bar="true" new-window="false" 
- notification-text="'This is my custom message'"&gt;
-&lt;/browser-update&gt;
-		                      </pre>
-		                  </div>
-		                </tab>
-		              </tabset>
-		            </div>
 				</div>
 			</div>
 		</section>
 
 		<section ng-controller="PlunkerCtrl" 
 		ng-init="
-		content.javascript= 'app.controller(\'MyCtrl\', [\'$scope\', function ($scope) {\n'+
+		content.javascript= 'app.controller(\'MyCtrl\', [\'$scope\',\'$window\', function ($scope, $window) {\n'+
 			'	$scope.versions = {i:8,f:8,o:9.63,s:2,c:8};\n'+
 			'	$scope.language = \'it\';\n'+
 			'	$scope.reminder = 1;\n'+
 			'	$scope.newWindow= true;\n'+
 			'	$scope.alwaysShowBar= true;\n'+
-			'	$scope.notificationText = \'This is my custom message\';\n'+
+
 			'	//callback functions\n'+
 			'	$scope.onNotificationBarShown= function(data){};\n'+
-			'	$scope.onNotificationBarClicked= function(data){};\n'+
+			'	$scope.onNotificationBarClicked= function(data){ $window.alert(\'Notification bar clicked!\');};\n'+
 			'}]);';
 		vendor_js=['https://rawgithub.com/tinesoft/ng-browser-update/master/src/ng-browser-update.js'];" >
 			<div class="row">
 				<div class="container">
 		
 		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
-						<p>Another usage, with some options given via <b>scope attributes values</b>.</p>						
+						<p>Another usage, with some options given via <b>scope values</b>.</p>						
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
 		             
 		              <div class="pull-right">
 		                <button class="btn btn-info" ng-click="edit('1.0.7', 'ngBrowserUpdate', 'ng-browser-update')">
-		                <i class="fa fa-edit"></i> Edit in plunker
+						  	<i class="fa fa-eye"></i> See / 
+		                	<i class="fa fa-edit"></i> Edit in plunker
 		                </button>
 		              </div>
 		              <tabset>
 		                <tab heading="Markup">
 		                  <div plunker-content="markup">
 		                      <pre class="prettyprint">
-&lt;browser-update  ng-controller="MyCtrl"
- versions="versions" reminder="reminder"
- new-window="newWindow" 
- always-show-bar="alwaysShowBar" 
- notification-text="notificationText"
- on-notification-bar-shown="onNotificationBarShown(null)"
- on-notification-bar-clicked="onNotificationBarClicked(null)"
- &gt;
-&lt;/browser-update&gt;
+&lt;div  ng-controller="MyCtrl"&gt;
+   &lt;browser-update
+    versions="versions" reminder="reminder"
+    new-window="newWindow" 
+    always-show-bar="alwaysShowBar" 
+    on-notification-bar-shown="onNotificationBarShown(null)"
+    on-notification-bar-clicked="onNotificationBarClicked(null)"&gt;
+   &lt;/browser-update&gt;
+&lt;/div&gt;
 		                      </pre>
 		                  </div>
 		                </tab>
@@ -210,16 +217,18 @@
 		                      <pre class="prettyprint">
 &lt;script &gt;
 angular.module('demoApp', [])
-.controller('MyCtrl', ['$scope', function ($scope) {
+.controller('MyCtrl', ['$scope', '$window', 
+ function ($scope, $window) {
   $scope.versions = {i:8,f:8,o:9.63,s:2,c:8};					
   $scope.language = 'it';					
   $scope.reminder = 1;				
   $scope.newWindow= true;					
-  $scope.alwaysShowBar= true;			
-  $scope.notificationText = 'This is my custom message';		
+  $scope.alwaysShowBar= true;	
+  		
   //callback functions
   $scope.onNotificationBarShown= function(data){};
-  $scope.onNotificationBarClicked= function(data){};
+  $scope.onNotificationBarClicked= function(data){ 
+  	$window.alert('Notification bar clicked!');};
 }]);
 
 &lt;/script&gt;
@@ -244,11 +253,17 @@ angular.module('demoApp', [])
 						</p>					
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="pull-right">
+							<button class="btn btn-info" ng-click="edit('1.0.7', 'ngBrowserUpdate', 'ng-browser-update')">
+							  	<i class="fa fa-eye"></i> See / 
+			                	<i class="fa fa-edit"></i> Edit in plunker
+							</button>
+						</div>
 						<tabset>
 							<tab heading="Markup">
 			                  <div plunker-content="markup">
 			                      <pre class="prettyprint">
-&lt;browser-update&gt;&lt;/browser-update&gt;
+&lt;browser-update always-show-bar="true"&gt;&lt;/browser-update&gt;
 			                      </pre>
 			                  </div>
 			                </tab>
@@ -257,7 +272,7 @@ angular.module('demoApp', [])
 			                    <pre class="prettyprint">
 body .buorg {font-size:20px}
 
-.buorg {
+body .buorg {
     position:absolute;
     width:100%;
     top:0px;
@@ -269,12 +284,15 @@ body .buorg {font-size:20px}
     font-family: Arial,Helvetica,sans-serif; color:#000;
     font-size: 12px;
 }
-.buorg div {
+
+body .buorg div {
     padding:5px 36px 5px 40px;
 }
-.buorg a {
+
+body .buorg a {
     color:#E25600;
 }
+
 #buorgclose {
     position: absolute;
     right: .5em;

@@ -24,7 +24,7 @@ npm install ng-browser-update
 How to use it
 -------------
 
-You should already have a bunch of scripts and CSS required for bootstrap-daterangepicker:
+You should already have jQuery and  angular scripts referenced. If not, add them:
 
 ```
 <script type="text/javascript" src="jquery.min.js"></script>
@@ -34,7 +34,7 @@ You should already have a bunch of scripts and CSS required for bootstrap-datera
 to the list above, you should add:
 
 ```
-<script type="text/javascript" src="ng-browser-update.js"></script>
+<script type="text/javascript" src="ng-browser-update.min.js"></script>
 ```
 
 Then, inject `ngBrowserUpdate` in your application module:
@@ -43,7 +43,7 @@ Then, inject `ngBrowserUpdate` in your application module:
 angular.module('myApp', ['ngBrowserUpdate']);
 ```
 
-and then just add an `browser-updae`:
+and then just add an `browser-update` tag:
 
 ```
 <browser-update></browser-update>

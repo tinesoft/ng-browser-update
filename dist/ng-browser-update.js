@@ -1,8 +1,8 @@
 /**
- * ng-browser-update - v0.1.0 - 2014-12-31
+ * ng-browser-update - v0.1.0 - 2015-01-01
  * http://github.com/tinesoft/ng-browser-update
  *
- * Copyright (c) 2014 Tine Kondo
+ * Copyright (c) 2015 Tine Kondo
  * Licensed MIT <https://raw.github.com/tinesoft/ng-browser-update/master/LICENSE>
  */
 (function ( window, angular, undefined ) {

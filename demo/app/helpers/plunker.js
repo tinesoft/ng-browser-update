@@ -22,7 +22,8 @@ angular.module('plunker', [])
 			var listUpScript = function(jsFiles){
 				var r = "";
 				for(var i = 0, len = jsFiles.length; i < len; i++) {
-					r += '      <script src="' + jsFiles[i] + '"></script>\n';
+					r = (i===0) ? '\n'+r : r;//extra '/n' for first script line
+					r += '		<script src="' + jsFiles[i] + '"></script>\n';
 				}
 
 				return r;
@@ -31,43 +32,45 @@ angular.module('plunker', [])
 			var listUpLink = function(cssFiles){
 				var r = "";
 				for(var i = 0, len = cssFiles.length; i < len; i++) {
-					r += '    <link rel="stylesheet" type="text/css" href="' + cssFiles[i] + '"/>\n';
+					r = (i===0) ? '\n'+r : r;//extra '/n' for first script line
+					r += '		<link rel="stylesheet" type="text/css" href="' + cssFiles[i] + '"/>\n';
 				}
 				return r;
 			};
 
 			var indexContent = function () {
 				return '<!DOCTYPE html>\n' +
-					'<html ng-app="x">\n\n' +
-					'  <head>\n' +
-					'    <meta charset="utf-8" />\n' +
-					'    <title>' + moduleName + ' : demo </title>\n\n' +
+					'<html ng-app="'+moduleName+'Demo">\n' +
+					'	<head>\n' +
+					'		<meta charset="utf-8" />\n' +
+					'		<title>' + moduleName + ' : Demo </title>\n' +
 
 					listUpLink(vendor_css) + '\n' +
 
-					'  </head>\n' +
-					'  <body>\n\n' +
+					'	</head>\n' +
+					'	<body>\n\n' +
 
-					content.markup + '\n\n' +
+					content.markup + '\n' +
 
-					'      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/'+ngVersion+'/angular.min.js"></script>\n' +
+					'		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>\n'+
+					'		<script src="//ajax.googleapis.com/ajax/libs/angularjs/'+ngVersion+'/angular.min.js"></script>\n' +
 
 					listUpScript(vendor_js) +
 
 					//'      <script src="https://rawgithub.com/tinesoft/' + repoName + '/bower/' + repoName + '.min.js"></script>\n' +
 
-					'    <script src="app.js"></script>\n' +
-					'  </body>\n' +
+					'		<script src="app.js"></script>\n' +
+					'	</body>\n' +
 					'</html>\n';
 			};
 
 			var scriptContent = function(content) {
-				return "var app = angular.module('x', ['" + moduleName.toLowerCase() + "']);" + "\n\n" + content;
+				return "var app = angular.module('"+moduleName+"Demo', ['" + moduleName + "']);" + "\n\n" + content;
 			};
 
 
 
-			addField('description', 'http://tinesoft.github.io/' + repoName);
+			addField('description', '//tinesoft.github.io/' + repoName);
 			addField('files[index.html]', indexContent(content));
 			addField('files[app.js]', scriptContent(content.javascript || ""));
 

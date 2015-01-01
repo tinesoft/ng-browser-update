@@ -68,16 +68,16 @@ module.exports = function ( grunt ) {
           "package.json", 
           "bower.json"
         ],
-        commit: false,
+        commit: true,
         commitMessage: 'chore(release): v%VERSION%',
         commitFiles: [
           "package.json", 
           "bower.json"
         ],
-        createTag: false,
+        createTag: true,
         tagName: 'v%VERSION%',
         tagMessage: 'Version %VERSION%',
-        push: false,
+        push: true,
         pushTo: 'origin'
       }
     },    
@@ -533,7 +533,8 @@ module.exports = function ( grunt ) {
             scripts: jsFiles,
             styles: cssFiles,
             lr: lrFile, // pass the livereload file
-            version: grunt.config( 'pkg.version' )
+            version: grunt.config( 'pkg.version' ),
+            description: grunt.config( 'pkg.description' )
           }
         });
       }
