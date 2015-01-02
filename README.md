@@ -1,7 +1,7 @@
-ng-browser-update
-=====================
+ng-browser-update [![Build Status](https://travis-ci.org/tinesoft/ng-browser-update.svg)](https://travis-ci.org/tinesoft/ng-browser-update)
+===========================================================================================================================================
 
-AngularJS directive for Browser-Update.org (http://browser-update.org): out-dated browsers notifier.
+AngularJS directive for [Browser-Update.org](http://browser-update.org): out-dated browsers notifier.
 
 Demo: http://tinesoft.github.io/ng-browser-update
 
@@ -91,6 +91,14 @@ assuming you already have `grunt` installed, otherwise you also need to do:
 npm install -g grunt-cli
 ```
 
+### License
+
+Copyright (c) 2015 Tine Kondo. Licensed under the MIT License (MIT)
+
+
+### Thanks To
+
+Credits and thanks go to the team behind [Browser-Update.org](http://browser-update.org) for this awesome initiative!
 
 
 

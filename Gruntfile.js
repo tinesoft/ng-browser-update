@@ -71,8 +71,7 @@ module.exports = function ( grunt ) {
         commit: true,
         commitMessage: 'chore(release): v%VERSION%',
         commitFiles: [
-          "package.json", 
-          "bower.json"
+          "-a"
         ],
         createTag: true,
         tagName: 'v%VERSION%',

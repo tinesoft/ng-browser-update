@@ -1,5 +1,6 @@
 *.sw*
 *~
+gh-pages-deploy.bat
 grunt-watch.bat
 install.bat
 build/
