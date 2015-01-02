@@ -1,7 +1,7 @@
 {
   "name": "ng-browser-update",
   "description": "AngularJS directive for Browser-Update.org (http://browser-update.org): out-dated browsers notifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "filename": "./src/ng-browser-update.js",
   "homepage": "http://github.com/tinesoft/ng-browser-update",
   "author": {

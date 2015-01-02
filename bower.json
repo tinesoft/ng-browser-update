@@ -1,6 +1,6 @@
 {
   "name": "ng-browser-update",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": [
     "dist/ng-browser-update.js",
     "dist/ng-browser-update.min.js",
