@@ -175,9 +175,9 @@ module.exports = function ( grunt ) {
       build_css: {
         src: [
           '<%= vendor_files.css %>',
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= build_dir %>/assets/<%= pkg.name %>-demo.css'
         ],
-        dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+        dest: '<%= build_dir %>/assets/<%= pkg.name %>-demo.css'
       },
       /**
        * The `compile_js_demo` target is the concatenation of our demo application source
@@ -194,7 +194,7 @@ module.exports = function ( grunt ) {
           '<%= build_dir %>/demo/**/*.js', 
           'module.suffix' 
         ],
-        dest: '<%= compile_dir_demo %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
+        dest: '<%= compile_dir_demo %>/assets/<%= pkg.name %>-demo.js'
       },
 
       /**
@@ -242,7 +242,7 @@ module.exports = function ( grunt ) {
         },
         files: {
           '<%= compile_dir_src %>/<%= pkg.name %>.min.js': '<%= concat.compile_js_src.dest %>',
-          '<%= compile_dir_demo %>/assets/<%= pkg.name %>-<%= pkg.version %>.min.js': '<%= concat.compile_js_demo.dest %>'
+          '<%= compile_dir_demo %>/assets/<%= pkg.name %>-demo.min.js': '<%= concat.compile_js_demo.dest %>'
         }
       }
     },
@@ -255,12 +255,12 @@ module.exports = function ( grunt ) {
     less: {
       build: {
         files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= demo_files.less %>'
+          '<%= build_dir %>/assets/<%= pkg.name %>-demo.css': '<%= demo_files.less %>'
         }
       },
       compile: {
         files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= demo_files.less %>'
+          '<%= build_dir %>/assets/<%= pkg.name %>-demo.css': '<%= demo_files.less %>'
         },
         options: {
           cleancss: true,
@@ -334,7 +334,7 @@ module.exports = function ( grunt ) {
           '<%= build_dir %>/src/**/*.js',
           '<%= build_dir %>/demo/**/*.js',
           '<%= vendor_files.css %>',
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= build_dir %>/assets/<%= pkg.name %>-demo.css'
         ],
         lr: [ 'http://localhost:35729/livereload.js' ]
       },
@@ -349,7 +349,7 @@ module.exports = function ( grunt ) {
         src: [
           '<%= concat.compile_js_demo.dest %>',
           '<%= vendor_files.css %>',
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= build_dir %>/assets/<%= pkg.name %>-demo.css'
         ],
         lr: []  // we don't want to include livereload on compile
       }
