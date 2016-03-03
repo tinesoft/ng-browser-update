@@ -21,10 +21,16 @@ angular.module('ngBrowserUpdate', [])
 
 	function createScript($element)
 	{
-        $element.empty();
+        emptyElement($element);
         $element.append(angular.element('<script src="'+SCRIPT_URL+'"></script>'));
 	}
 	
+
+	function emptyElement($element){
+		while($element.firstChild){
+  			$element.removeChild($element.firstChild);
+		}
+	}
 
 	return {
 		restrict: 'E',
