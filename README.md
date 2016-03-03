@@ -1,4 +1,4 @@
-ng-browser-update [![Build Status](https://travis-ci.org/tinesoft/ng-browser-update.svg)](https://travis-ci.org/tinesoft/ng-browser-update)
+ng-browser-update [![Build Status](https://travis-ci.org/tinesoft/ng-browser-update.svg)](https://travis-ci.org/tinesoft/ng-browser-update)[![devDependency Status](https://david-dm.org/tinesoft/ng-browser-update/dev-status.svg)](https://david-dm.org/tinesoft/ng-browser-update#info=devDependencies)
 ===========================================================================================================================================
 
 AngularJS directive for [Browser-Update.org](http://browser-update.org): out-dated browsers notifier.
