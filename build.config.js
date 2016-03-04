@@ -55,12 +55,12 @@ module.exports = {
    */
   vendor_files: {
     js: [
-      'bower_components/angular/angular.min.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'bower_components/google-code-prettify/bin/prettify.min.js'
+      'bower_components/angular/angular.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/google-code-prettify/src/prettify.js'
     ],
     css: [
-      'bower_components/google-code-prettify/bin/prettify.min.css'
+      'bower_components/google-code-prettify/src/prettify.css'
     ],
     assets: [
     ]

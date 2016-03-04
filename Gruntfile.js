@@ -15,6 +15,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.loadNpmTasks('grunt-build-control');
 
 
   /**
@@ -45,7 +46,7 @@ module.exports = function ( grunt ) {
         ' * <%= pkg.homepage %>\n' +
         ' *\n' +
         ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
-        ' * Licensed <%= pkg.licenses.type %> <<%= pkg.licenses.url %>>\n' +
+        ' * Licensed <%= pkg.license %>\n' +
         ' */\n'
     },
 
@@ -80,6 +81,29 @@ module.exports = function ( grunt ) {
         pushTo: 'origin'
       }
     },    
+    /**
+     * grunt plugin to easily version and deploy built code.
+     */
+    buildcontrol: {
+      options: {
+        dir: 'dist/demo',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      ghpages: {
+        options: {
+          remote: 'git@github.com:tinesoft/ng-juxtapose.git',
+          branch: 'gh-pages'
+        }
+      },
+      local: {
+        options: {
+          remote: '../../',
+          branch: 'dist/demo'
+        }
+      }
+    },
 
     /**
      * The directories to delete when `grunt clean` is executed.
@@ -189,8 +213,8 @@ module.exports = function ( grunt ) {
         },
         src: [ 
           '<%= vendor_files.js %>', 
-          '<%= build_dir %>/src/**/*.js', 
           'module.prefix', 
+          '<%= build_dir %>/src/**/*.js', 
           '<%= build_dir %>/demo/**/*.js', 
           'module.suffix' 
         ],

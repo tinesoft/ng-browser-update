@@ -12,10 +12,7 @@
     "type": "git",
     "url": "git://github.com/tinesoft/ng-browser-update.git"
   },
-  "licenses": {
-    "type": "MIT",
-    "url": "https://raw.github.com/tinesoft/ng-browser-update/master/LICENSE"
-  },
+  "license": "MIT",
   "keywords": [
     "angular",
     "browser update",
@@ -44,6 +41,7 @@
     "grunt-karma": "latest",
     "grunt-ng-annotate": "latest",
     "grunt-bump": "latest",
+    "grunt-build-control": "latest",
     "karma": "latest",
     "karma-jasmine": "latest",
     "karma-phantomjs-launcher": "latest"
