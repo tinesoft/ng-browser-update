@@ -5,12 +5,12 @@ describe('Directive: browserUpdate', function () {
 		attrOptionsTemplate = 
 			'<browser-update always-show-bar="true" new-window="true" reminder="1"'+
 			'			language="\'it\'" versions="{i:8,f:8,o:9.63,s:2,c:8}"'+
-			'			notification-text="\'This is my custom notification message\'"'+					
+			'			notification-text="This is my custom notification message"'+					
 			'</browser-update>',
 		scopeOptionsTemplate = 
 			'<browser-update always-show-bar="alwaysShowBar" new-window="newWindow" reminder="reminder"'+
 			'			language="language" versions="versions"'+
-			'			notification-text="notificationText"'+					
+			'			notification-text="{{notificationText}}"'+					
 			'			on-notification-bar-shown="onNotificationBarShown(\'show\');"'+
 			'			on-notification-bar-clicked="onNotificationBarClicked(\'click\');">'+
 			'</browser-update>';

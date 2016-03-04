@@ -27,7 +27,6 @@ How to use it
 You should already have jQuery and  angular scripts referenced. If not, add them:
 
 ```
-<script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="angular.min.js"></script>
 ```
 
@@ -50,7 +49,7 @@ and then just add an `browser-update` tag:
 ```
 
 
-### Implemented features so far
+### Implemented features so far:
 
 * `versions` : browser versions to notify
 * `language` : set a language for the message, e.g. "en", overrides the default detection
@@ -67,9 +66,28 @@ Example with some above features:
 <browser-update  
  versions="{i:8,f:8,o:9.63,s:2,c:8}" reminder="1"
  always-show-bar="false" new-window="false" 
- notification-text="'This is my custom notification message'">
+ notification-text="This is my custom notification message">
 </browser-update>
 ```
+
+### Easy i18n support for custom notification message
+
+Version [v1.1](http://github.com/tinesoft/ng-browser-update/blob/v1.1/CHANGELOG.md) of **ng-browser-update** makes it possible to use angular's expressions as value for the `notification-text` attribute.
+This allows you to use, for example, [angular-translate](https://angular-translate.github.io/)'s `translate` filter, to easily translate the custom message that appears in the notification bar.
+
+Here is an example:
+
+```
+<browser-update  
+ versions="{i:8,f:8,o:9.63,s:2,c:8}" reminder="1"
+ always-show-bar="false" new-window="false" 
+ notification-text="{{ 'CUSTOM_NOTIFICATION_MESSAGE_ID' | translate }}">
+</browser-update>
+```
+> where **CUSTOM_NOTIFICATION_MESSAGE_ID** is the key of the message.
+
+More information on how to use [angular-translate](https://angular-translate.github.io/)'s `translate` filter can be found [here](http://angular-translate.github.io/docs/#/guide/04_using-translate-filter).
+
 
 ### Features to be implemented:
 

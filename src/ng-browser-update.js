@@ -40,7 +40,7 @@ angular.module('ngBrowserUpdate', [])
 			reminder : '=',					// atfer how many hours should the message reappear: 0 = show all the time
 			newWindow: '=',					// open link in new window/tab
 			alwaysShowBar: '=',				// true = always show the bar (for testing)
-			notificationText : '=',			// custom notification html text (takes precedence over the 'language' option)
+			notificationText : '@',			// custom notification html text (takes precedence over the 'language' option)
 			onNotificationBarShown: '&',	// callback function after the bar has appeared
 			onNotificationBarClicked: '&'	// callback function if bar was clicked
 		},
