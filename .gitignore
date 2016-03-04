@@ -1,8 +1,10 @@
 *.sw*
 *~
-gh-pages-deploy.bat
-grunt-watch.bat
-install.bat
-build/
-node_modules/
-bower_components/
+*.bat
+*.sh
+*.out.txt
+/dist/demo
+/build
+/node_modules
+/bower_components
+/misc_resources
