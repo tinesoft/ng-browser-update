@@ -93,7 +93,7 @@ module.exports = function ( grunt ) {
       },
       ghpages: {
         options: {
-          remote: 'git@github.com:tinesoft/ng-juxtapose.git',
+          remote: 'git@github.com:tinesoft/ng-browser-update.git',
           branch: 'gh-pages'
         }
       },
