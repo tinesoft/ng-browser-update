@@ -1,9 +1,9 @@
 /**
- * ng-browser-update - v1.0.1 - 2015-01-02
+ * ng-browser-update - v1.1.0 - 2016-03-05
  * http://github.com/tinesoft/ng-browser-update
  *
- * Copyright (c) 2015 Tine Kondo
- * Licensed MIT <https://raw.github.com/tinesoft/ng-browser-update/master/LICENSE>
+ * Copyright (c) 2016 Tine Kondo
+ * Licensed MIT
  */
 (function ( window, angular, undefined ) {
 
@@ -30,10 +30,16 @@ angular.module('ngBrowserUpdate', [])
 
 	function createScript($element)
 	{
-        $element.empty();
+        emptyElement($element);
         $element.append(angular.element('<script src="'+SCRIPT_URL+'"></script>'));
 	}
 	
+
+	function emptyElement($element){
+		while($element.firstChild){
+  			$element.removeChild($element.firstChild);
+		}
+	}
 
 	return {
 		restrict: 'E',
@@ -43,7 +49,7 @@ angular.module('ngBrowserUpdate', [])
 			reminder : '=',					// atfer how many hours should the message reappear: 0 = show all the time
 			newWindow: '=',					// open link in new window/tab
 			alwaysShowBar: '=',				// true = always show the bar (for testing)
-			notificationText : '=',			// custom notification html text (takes precedence over the 'language' option)
+			notificationText : '@',			// custom notification html text (takes precedence over the 'language' option)
 			onNotificationBarShown: '&',	// callback function after the bar has appeared
 			onNotificationBarClicked: '&'	// callback function if bar was clicked
 		},
