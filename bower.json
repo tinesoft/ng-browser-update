@@ -2,9 +2,7 @@
   "name": "ng-browser-update",
   "version": "1.0.1",
   "main": [
-    "dist/ng-browser-update.js",
-    "dist/ng-browser-update.min.js",
-    "dist/ng-browser-update.min.js.map"
+    "dist/ng-browser-update.js"
   ],
   "ignore": [
 
@@ -20,9 +18,7 @@
       "changelog.tpl",
       "package.json",
       "module.prefix",
-      "module.suffix",
-      "LICENSE",
-      "README.md"
+      "module.suffix"
   ],
   "dependencies": {
     "angular": ">= 1.0.7"
