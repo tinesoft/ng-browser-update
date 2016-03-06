@@ -24,25 +24,25 @@ npm install ng-browser-update
 How to use it
 -------------
 
-You should already have jQuery and  angular scripts referenced. If not, add them:
+You should already angular script referenced. If not, add it:
 
 ```
 <script type="text/javascript" src="angular.min.js"></script>
 ```
 
-to the list above, you should add:
+Then add the library:
 
 ```
 <script type="text/javascript" src="ng-browser-update.min.js"></script>
 ```
 
-Then, inject `ngBrowserUpdate` in your application module:
+Next, inject `ngBrowserUpdate` in your application module:
 
 ```
 angular.module('myApp', ['ngBrowserUpdate']);
 ```
 
-and then just add an `browser-update` tag:
+and then just add an `browser-update` tag in your main file (index.html for example):
 
 ```
 <browser-update></browser-update>
